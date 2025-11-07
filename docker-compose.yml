@@ -8,12 +8,12 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - pgdata:/var/lib/postgresql/data
+      - data:/var/lib/postgresql/data
     networks:
       - erp-net
 
 volumes:
-  pgdata:
+  data:
 
 networks:
   erp-net:

@@ -1,4 +1,4 @@
-package com.desafio_pleno.erp_system.service;
+package com.desafio_pleno.erp_system.service.impl;
 
 import com.desafio_pleno.erp_system.dto.CriarPedidoDTO;
 import com.desafio_pleno.erp_system.dto.ItemPedidoDTO;
@@ -7,6 +7,7 @@ import com.desafio_pleno.erp_system.exception.BusinessException;
 import com.desafio_pleno.erp_system.exception.NotFoundException;
 import com.desafio_pleno.erp_system.model.*;
 import com.desafio_pleno.erp_system.repository.*;
+import com.desafio_pleno.erp_system.service.PedidoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

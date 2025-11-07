@@ -12,13 +12,15 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+    open-in-view: false
     properties:
       hibernate.format_sql: true
       hibernate.show_sql: false
+      hibernate.jdbc.time_zone: UTC
 
   sql:
     init:
-      mode: never   # evita rodar schema.sql/data.sql sem querer
+      mode: never
 
 server:
   port: 3030
