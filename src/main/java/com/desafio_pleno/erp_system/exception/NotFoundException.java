@@ -1,4 +1,8 @@
 package com.desafio_pleno.erp_system.exception;
 
-public class NotFoundException {
+/** Exceção para recursos não encontrados (HTTP 404 no ControllerAdvice). */
+public class NotFoundException extends RuntimeException {
+    public NotFoundException(String message) {
+        super(message);
+    }
 }

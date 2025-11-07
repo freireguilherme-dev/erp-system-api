@@ -1,4 +1,6 @@
 package com.desafio_pleno.erp_system.repository;
 
-public class ItemPedidoRepository {
-}
+import com.desafio_pleno.erp_system.model.ItemPedido;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ItemPedidoRepository extends JpaRepository<ItemPedido, Long> { }
