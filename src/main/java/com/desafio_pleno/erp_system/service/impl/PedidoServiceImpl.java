@@ -5,10 +5,13 @@ import com.desafio_pleno.erp_system.dto.ItemPedidoDTO;
 import com.desafio_pleno.erp_system.dto.PedidoDetalheDTO;
 import com.desafio_pleno.erp_system.exception.BusinessException;
 import com.desafio_pleno.erp_system.exception.NotFoundException;
+import com.desafio_pleno.erp_system.mapper.PedidoMapper;
 import com.desafio_pleno.erp_system.model.*;
 import com.desafio_pleno.erp_system.repository.*;
 import com.desafio_pleno.erp_system.service.PedidoService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -142,5 +145,21 @@ public class PedidoServiceImpl implements PedidoService {
                 ItemPedidoDTO::getQuantidade,
                 Integer::sum          // se repetir produtoId, soma quantidades
         ));
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Page<PedidoDetalheDTO> listar(String clienteNome, StatusPedido status, Pageable pageable) {
+        Page<Pedido> page;
+
+        if (clienteNome != null && !clienteNome.isBlank()) {
+            page = pedidoRepository.findByCliente_NomeContainingIgnoreCase(clienteNome, pageable);
+        } else if (status != null) {
+            page = pedidoRepository.findByStatus(status, pageable);
+        } else {
+            page = pedidoRepository.findAll(pageable);
+        }
+
+        return page.map(PedidoMapper::toResumoDTO);
     }
 }

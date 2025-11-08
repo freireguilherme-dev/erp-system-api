@@ -2,6 +2,9 @@ package com.desafio_pleno.erp_system.service;
 
 import com.desafio_pleno.erp_system.dto.CriarPedidoDTO;
 import com.desafio_pleno.erp_system.dto.PedidoDetalheDTO;
+import com.desafio_pleno.erp_system.model.StatusPedido;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 /**
  * Camada de regras de negócio do módulo de Pedidos.
@@ -22,4 +25,6 @@ public interface PedidoService {
      * @return detalhes do pedido
      */
     PedidoDetalheDTO buscarPorId(Long id);
+
+    <PedidoResumoDTO> Page<PedidoResumoDTO> listar(String clienteNome, StatusPedido status, Pageable pageable);
 }
