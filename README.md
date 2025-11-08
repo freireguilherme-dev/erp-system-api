@@ -96,6 +96,8 @@ erp-system/
 ```
 bash
 docker compose up -d
+
+docker exec -it erp-system-postgres-1 psql -U dev -d appdb
 ```
 docker-compose.yml
 ```
