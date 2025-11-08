@@ -225,3 +225,6 @@ Principais testes:
    - 💼 Desenvolvedor Java • Bacharelado em Engenharia de Software • Pós-graduação em Java
 
    - 📧 contato: freireguilherme2@gmail.com
+
+   - [![Linkedin: Guilherme Freire](https://img.shields.io/badge/-LinkedIn%20-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/freireguilherme/)](https://www.linkedin.com/in/freireguilherme/)
+
